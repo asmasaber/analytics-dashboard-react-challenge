@@ -6,5 +6,20 @@
     - [x] run, build, lint, format, test & test coverage scripts
 
 - [x] Project structure
-- [ ] Layout
-- [ ] 
+- [x] Layout & theme
+- [ ] Fetch Data
+  - [ ] Setup RTK
+  - [ ] Fetch data
+  - [ ] formmat data to be 
+        {
+            originalData: [],
+            filters: {
+                countries: string[],
+                camps: string[],
+                schools: { // grouped by country & camp
+                    'country-camp': string[],
+                }
+            },
+            filteredData: [] // TO BE FIT THE Chart 
+        }
+        

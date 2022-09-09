@@ -1,7 +1,12 @@
 import React from 'react';
+import Dashboard from './pages/Dashboard';
 
 const App = () => {
-  return <h1>Analysis Chart Front-End Challenge</h1>;
+  return (
+    <>
+      <Dashboard />
+    </>
+  );
 };
 
 export default App;
