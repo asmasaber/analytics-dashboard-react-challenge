@@ -19,7 +19,7 @@ const Details = React.lazy(() => import('./pages/Details'));
 
 const App = () => {
   const dispatch = useAppDispatch();
-  const { mode } = useAppSelector(state => state.theme);
+  const { mode } = useAppSelector((state) => state.theme);
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
   const theme = React.useMemo(
     () =>
@@ -29,18 +29,18 @@ const App = () => {
           primary: {
             main: '#9066ad',
           },
-        }
+        },
       }),
     [prefersDarkMode, mode],
   );
 
   useEffect(() => {
     dispatch(loadData());
-  }, []);
+  }, [dispatch]);
 
   const handleToggleTheme = () => {
     dispatch(toggleTheme());
-  }
+  };
 
   return (
     <ThemeProvider theme={theme}>
@@ -63,14 +63,16 @@ const App = () => {
             <Route path="details/:shcoolName" element={<Details />} />
           </Routes>
         </Suspense>
-        <Fab size="small" sx={{
-          position: 'absolute',
-          bottom: 16,
-          right: 16,
-        }}
-        onClick={handleToggleTheme}
+        <Fab
+          size="small"
+          sx={{
+            position: 'absolute',
+            bottom: 16,
+            right: 16,
+          }}
+          onClick={handleToggleTheme}
         >
-          { mode === 'dark' ? <Brightness4Icon /> : <Brightness7Icon />}
+          {mode === 'dark' ? <Brightness4Icon /> : <Brightness7Icon />}
         </Fab>
       </Box>
     </ThemeProvider>

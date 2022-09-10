@@ -20,7 +20,7 @@ const Filters = () => {
       }
       dispatch(updateFilters(newFilters));
     },
-    [filters],
+    [filters, dispatch],
   );
 
   return (

@@ -6,13 +6,13 @@ The challenge is to implement an analytics dashboard like this one with the desc
 
 ## Acceptance Criteria
 
-- [ ] A loading screen is expected while fetching the `data.json` from the server. You can use the `raw` file directly from Github or serve it from a local server.
-- [ ] The 3 drop-down lists at the top should filter the data. `Select School` should have the option to `Show all`.
-- [ ] A chart renders the data of the selected schools similar to the image above.
-- [ ] On the right of the screen, the total number of lessons is displayed for the selected Camp, School, and Country, followed by a list of the schools with how many lessons each offers.
-- [ ] The school's list from **point 4** should include toggles to show or hide the line chart of a certain school.
-- [ ] Upon clicking on a point in the chart from **point 3**, the app should navigate to another page where all the details of that item are shown. No UX is provided, but use a simple layout that shows: like country, camp, school, month, and a number of lessons.
-- [ ] After coming back from the details page implemented in **point 6**, the last filtering state should be preserved.
+- [x] A loading screen is expected while fetching the `data.json` from the server. You can use the `raw` file directly from Github or serve it from a local server.
+- [x] The 3 drop-down lists at the top should filter the data. `Select School` should have the option to `Show all`.
+- [x] A chart renders the data of the selected schools similar to the image above.
+- [x] On the right of the screen, the total number of lessons is displayed for the selected Camp, School, and Country, followed by a list of the schools with how many lessons each offers.
+- [x] The school's list from **point 4** should include toggles to show or hide the line chart of a certain school.
+- [x] Upon clicking on a point in the chart from **point 3**, the app should navigate to another page where all the details of that item are shown. No UX is provided, but use a simple layout that shows: like country, camp, school, month, and a number of lessons.
+- [x] After coming back from the details page implemented in **point 6**, the last filtering state should be preserved.
 
 ## Requirements
 
@@ -49,7 +49,7 @@ The challenge is to implement an analytics dashboard like this one with the desc
 
 ## Suggestions to Make Your Project Stand Out
 
-- [ ] Implement a toggle to switch on/off dark mode.
+- [x] Implement a toggle to switch on/off dark mode.
 - [ ] Multi-lingual support.
 - [ ] E2E testing
 

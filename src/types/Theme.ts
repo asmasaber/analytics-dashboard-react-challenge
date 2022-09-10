@@ -1,3 +1,3 @@
 export interface IThemeState {
-  mode: 'dark' | 'light'
+  mode: 'dark' | 'light';
 }
