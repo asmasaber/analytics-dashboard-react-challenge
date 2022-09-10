@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import Grid from '@mui/material/Grid';
 import Select from '../components/Select';
 import { useAppSelector, useAppDispatch } from '../store/hooks';
@@ -12,13 +12,16 @@ const Filters = () => {
     filters,
   } = useAppSelector((state) => state.schoolLesson);
 
-  const handleChange = ({ value, name }: { value: string; name: string }) => {
-    const newFilters = { ...filters, [name]: value };
-    if (name !== 'school') {
-      newFilters.school = 'all';
-    }
-    dispatch(updateFilters(newFilters));
-  };
+  const handleChange = useCallback(
+    ({ value, name }: { value: string; name: string }) => {
+      const newFilters = { ...filters, [name]: value };
+      if (name !== 'school') {
+        newFilters.school = 'all';
+      }
+      dispatch(updateFilters(newFilters));
+    },
+    [filters],
+  );
 
   return (
     <Grid

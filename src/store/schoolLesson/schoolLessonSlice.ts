@@ -1,16 +1,20 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
-import { fetchSchoolsLessons, formatSchoolData } from '../../services/schools';
-import { ISchoolLessonState, Filters, Lookups } from '../../types/ISchoolLesson';
+import { fetchSchoolsLessons, formatSchoolData, filterSchools } from '../../services/schools';
+import ISchoolLesson, { ISchoolLessonState, IFilters, ILookups } from '../../types/SchoolLesson';
 
 const initialState: ISchoolLessonState = {
   loading: false,
   error: null,
   originalData: [],
-  lookups: {} as Lookups,
-  filters: {} as Filters,
+  lookups: {} as ILookups,
+  filters: {} as IFilters,
+  filteredData: {
+    schools: {},
+    total: 0,
+  },
 };
 
-export const loadData = createAsyncThunk(
+export const loadData = createAsyncThunk<ISchoolLesson[]>(
   'schools/fetch_lessons',
   async () => await fetchSchoolsLessons(),
 );
@@ -19,8 +23,13 @@ export const schoolLessonSlice = createSlice({
   name: 'schoolLesson',
   initialState,
   reducers: {
-    updateFilters: (state, { payload }: PayloadAction<Filters>) => {
+    updateFilters: (state, { payload }: PayloadAction<IFilters>) => {
+      const countryCampSchools = filterSchools(state.originalData, payload);
       state.filters = payload;
+      state.filteredData = countryCampSchools;
+    },
+    toggleSelectedSchools: (state, { payload: school }: PayloadAction<string>) => {
+      state.filteredData.schools[school].selected = !state.filteredData?.schools[school]?.selected;
     },
   },
   extraReducers: (builder) => {
@@ -30,10 +39,11 @@ export const schoolLessonSlice = createSlice({
         state.error = null;
       })
       .addCase(loadData.fulfilled, (state, { payload }) => {
+        const { lookups, filters, filteredData } = formatSchoolData(payload);
         state.originalData = payload;
-        const { lookups, filtres } = formatSchoolData(payload);
         state.lookups = lookups;
-        state.filters = filtres;
+        state.filters = filters;
+        state.filteredData = filteredData;
         state.error = null;
         state.loading = false;
       })
@@ -44,5 +54,5 @@ export const schoolLessonSlice = createSlice({
   },
 });
 
-export const { updateFilters } = schoolLessonSlice.actions;
+export const { updateFilters, toggleSelectedSchools } = schoolLessonSlice.actions;
 export default schoolLessonSlice.reducer;

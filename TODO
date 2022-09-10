@@ -13,7 +13,7 @@
   - [x] Filter container
     - [x] get lookups from the data
     - [x] update state filters
-  - [ ] format data to be 
+  - [x] format data to be 
     {
       originalData: [],
       lookups: {
@@ -30,4 +30,11 @@
       },
       filteredData: [] // TO BE FIT THE Chart 
     }
+  - [x] Chart Component
+    - [x] fromat chart data
+    - [x] chart component & test
         
+
+
+https://bionicjulia.com/blog/writing-jest-tests-redux-toolkit-slice
+https://kentcdodds.com/blog/fix-the-not-wrapped-in-act-warning

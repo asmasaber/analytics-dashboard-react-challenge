@@ -1,6 +1,6 @@
-import axios from '../services';
+import axios from '../services/apiClient';
 import MockAdapter from 'axios-mock-adapter';
-import ISchoolLesson from '../types/ISchoolLesson';
+import ISchoolLesson from '../types/SchoolLesson';
 
 export const fetchSchoolsLessonsResponse: ISchoolLesson[] = [
   {

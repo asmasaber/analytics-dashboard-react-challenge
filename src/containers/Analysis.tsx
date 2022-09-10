@@ -1,8 +1,41 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
+import { useNavigate } from 'react-router-dom';
+
+import { monthLabelForChart } from '../utils';
+import Chart from '../components/LineChart';
+import { useAppSelector } from '../store/hooks';
+import SchoolLessonsList from './SchoolLessonsList';
+import { ChartData } from '../types/SchoolLesson';
 
 const Analysis = () => {
+  const navigate = useNavigate();
+  const [chartData, setChartData] = useState<ChartData>([]);
+
+  const {
+    filteredData: { schools },
+  } = useAppSelector((state) => state.schoolLesson);
+
+  useEffect(() => {
+    const data = [] as ChartData;
+    for (const school in schools) {
+      if (schools[school].selected) {
+        data.push({
+          label: school,
+          data: Object.values(schools[school].months),
+          borderColor: schools[school].color,
+        });
+      }
+    }
+    setChartData(data);
+  }, [schools]);
+
+  const handleChartClick = (chartDataIndex: number) => {
+    const schoolName = chartData[chartDataIndex].label;
+    navigate(`/details/${schoolName}`);
+  };
+
   return (
     <Grid container component="section">
       {/* Chart */}
@@ -12,10 +45,10 @@ const Analysis = () => {
             p: 2,
             display: 'flex',
             flexDirection: 'column',
-            height: 600,
+            height: '100%',
           }}
         >
-          Chart Component
+          <Chart labels={monthLabelForChart} datasets={chartData} onClick={handleChartClick} />
         </Paper>
       </Grid>
       {/* Schools Lessons List */}
@@ -25,10 +58,10 @@ const Analysis = () => {
             p: 2,
             display: 'flex',
             flexDirection: 'column',
-            height: 600,
+            height: '100%',
           }}
         >
-          Schools Lessons List
+          <SchoolLessonsList />
         </Paper>
       </Grid>
     </Grid>

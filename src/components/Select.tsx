@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import MUISelect, { SelectChangeEvent } from '@mui/material/Select';
@@ -22,10 +22,13 @@ const Select: React.FC<IPops> = ({
   onChange,
   showAll = false,
 }) => {
-  const handleChange = (event: SelectChangeEvent) => {
-    const { value, name } = event.target;
-    onChange({ value, name });
-  };
+  const handleChange = useCallback(
+    (event: SelectChangeEvent) => {
+      const { value, name } = event.target;
+      onChange({ value, name });
+    },
+    [onChange],
+  );
 
   return (
     <FormControl fullWidth data-testid={`${id}-testid`}>
