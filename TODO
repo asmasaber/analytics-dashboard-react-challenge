@@ -1,25 +1,33 @@
 - [x] Install React App (manual config)
-    - [x] react
-    - [x] typescript
-    - [x] unit test
-    - [x] eslint & prettier 
-    - [x] run, build, lint, format, test & test coverage scripts
+  - [x] react
+  - [x] typescript
+  - [x] unit test
+  - [x] eslint & prettier 
+  - [x] run, build, lint, format, test & test coverage scripts
 
 - [x] Project structure
 - [x] Layout & theme
-- [ ] Fetch Data
-  - [ ] Setup RTK
-  - [ ] Fetch data
-  - [ ] formmat data to be 
-        {
-            originalData: [],
-            filters: {
-                countries: string[],
-                camps: string[],
-                schools: { // grouped by country & camp
-                    'country-camp': string[],
-                }
-            },
-            filteredData: [] // TO BE FIT THE Chart 
+- [x] Fetch Data
+  - [x] Setup RTK & test
+  - [x] Fetch data
+  - [x] Filter container
+    - [x] get lookups from the data
+    - [x] update state filters
+  - [ ] format data to be 
+    {
+      originalData: [],
+      lookups: {
+        countries: string[],
+        camps: string[],
+        schools: { // grouped by country & camp
+          'country-camp': string[],
         }
+      },
+      filtres: { // selected values
+        country: string,
+        camp: string,
+        school: string,
+      },
+      filteredData: [] // TO BE FIT THE Chart 
+    }
         

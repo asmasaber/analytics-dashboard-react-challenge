@@ -15,8 +15,11 @@
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@mui/material": "^5.10.4",
+    "@reduxjs/toolkit": "^1.8.5",
+    "axios": "^0.27.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.19.0",
@@ -34,6 +37,7 @@
     "@types/webpack-dev-server": "^4.7.2",
     "@typescript-eslint/eslint-plugin": "^5.36.2",
     "@typescript-eslint/parser": "^5.36.2",
+    "axios-mock-adapter": "^1.21.2",
     "babel-loader": "^8.2.5",
     "eslint": "^8.23.0",
     "eslint-config-prettier": "^8.5.0",

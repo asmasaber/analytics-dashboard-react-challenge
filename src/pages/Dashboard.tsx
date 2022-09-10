@@ -21,7 +21,7 @@ const Dashboard = () => {
       <Headers />
 
       {/* Main */}
-      <Container component="main" maxWidth="xl" sx={{ mt: 4, mb: 4 }}>
+      <Container component="main" maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
         {/* Filters */}
         <Filters />
         {/* Analysis Section */}

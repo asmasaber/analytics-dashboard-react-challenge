@@ -4,7 +4,7 @@ import Container from '@mui/material/Container';
 
 const Headers = () => {
   return (
-    <Container component="header" maxWidth="xl" sx={{ mt: 4 }}>
+    <Container component="header" maxWidth="lg" sx={{ mt: 4 }}>
       <Typography component="h1" variant="h2" color="primary" gutterBottom>
         Analysis Chart
       </Typography>
