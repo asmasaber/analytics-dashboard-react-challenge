@@ -1,8 +1,8 @@
 import React, { useCallback } from 'react';
 import Grid from '@mui/material/Grid';
-import Select from '../components/Select';
-import { useAppSelector, useAppDispatch } from '../store/hooks';
-import { updateFilters } from '../store/schoolLesson/schoolLessonSlice';
+import Select from '../../../components/Select';
+import { useAppSelector, useAppDispatch } from '../../../app/hooks';
+import { updateFilters } from '../schoolLesson.slice';
 
 const Filters = () => {
   const dispatch = useAppDispatch();

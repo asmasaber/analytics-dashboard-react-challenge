@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
-import { fetchSchoolsLessons, formatSchoolData, filterSchools } from '../../services/schools';
-import ISchoolLesson, { ISchoolLessonState, IFilters, ILookups } from '../../types/SchoolLesson';
+import { fetchSchoolsLessons, formatSchoolData, filterSchools } from './schools.service';
+import ISchoolLesson, { ISchoolLessonState, IFilters, ILookups } from './schoolLesson.types';
 
 const initialState: ISchoolLessonState = {
   loading: false,

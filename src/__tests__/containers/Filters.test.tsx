@@ -9,10 +9,10 @@ import {
   mockedFilteredSchools,
   mockedFiltersWithSpecificSchool,
 } from '../../__mocks__/store';
-import { loadData, updateFilters } from '../../store/schoolLesson/schoolLessonSlice';
+import { loadData, updateFilters } from '../../features/schoolLesson/schoolLesson.slice';
 
-import { store } from '../../store';
-import Filters from '../../containers/Filters';
+import { store } from '../../app/store';
+import Filters from '../../features/schoolLesson/components/Filters';
 
 describe('Filters container', () => {
   beforeAll(() => {

@@ -1,7 +1,7 @@
 import { fetchSchoolsLessonsResponse, mockNetworkResponse } from '../__mocks__/store';
-import { loadData } from '../store/schoolLesson/schoolLessonSlice';
-import ISchoolLesson from '../types/SchoolLesson';
-import { store } from '../store';
+import { loadData } from '../features/schoolLesson/schoolLesson.slice';
+import ISchoolLesson from '../features/schoolLesson/schoolLesson.types';
+import { store } from '../app/store';
 
 describe('Redux School Lesson Slice', () => {
   beforeAll(() => {

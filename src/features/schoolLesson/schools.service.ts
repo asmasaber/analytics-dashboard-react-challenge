@@ -1,10 +1,10 @@
-import axios from './apiClient';
-import { randomColor } from '../utils';
+import axios from '../../app/apiClient';
+import { randomColor } from '../../app/utils';
 import ISchoolLesson, {
   ICountryCampSchool,
   ICountryCampSchools,
   IFilters,
-} from '../types/SchoolLesson';
+} from './schoolLesson.types';
 
 export const fetchSchoolsLessons = async (): Promise<ISchoolLesson[]> => {
   const response = await axios.get(

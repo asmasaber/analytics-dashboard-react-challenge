@@ -2,9 +2,9 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import { useAppDispatch, useAppSelector } from '../store/hooks';
-import { toggleSelectedSchools } from '../store/schoolLesson/schoolLessonSlice';
-import Toggle from '../components/Toggle';
+import { useAppDispatch, useAppSelector } from '../../../app/hooks';
+import { toggleSelectedSchools } from '../schoolLesson.slice';
+import Toggle from '../../../components/Toggle';
 
 interface TotalIProp {
   total: string | number;

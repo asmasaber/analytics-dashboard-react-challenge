@@ -1,7 +1,7 @@
 import React, { MouseEvent, useRef } from 'react';
 import Box from '@mui/material/Box';
 import { Line, getElementAtEvent } from 'react-chartjs-2';
-import type { ChartData } from '../types/SchoolLesson';
+import type { ChartData } from '../features/schoolLesson/schoolLesson.types';
 
 import {
   Chart as ChartJS,

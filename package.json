@@ -2,7 +2,6 @@
   "homepage": "http://asmasaber.github.io/analytics-dashboard-react-challenge",
   "name": "analytics-dashboard-react-challenge",
   "version": "0.0.1",
-  "license": "MIT",
   "private": true,
   "scripts": {
     "predeploy": "yarn build",

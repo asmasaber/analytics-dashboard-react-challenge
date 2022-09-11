@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import { useAppSelector } from '../store/hooks';
+import { useAppSelector } from '../app/hooks';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import Timeline from '../components/Timeline';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
-import SchoolDetails from '../containers/SchoolDetails';
-import { ITimelinteNode } from '../types/SchoolLesson';
+import SchoolDetails from '../features/schoolLesson/components/SchoolDetails';
+import { ITimelinteNode } from '../features/schoolLesson/schoolLesson.types';
 
 const Details = () => {
   const { shcoolName } = useParams();

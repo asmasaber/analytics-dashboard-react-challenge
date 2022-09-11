@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { IThemeState } from '../../types/Theme';
+import { IThemeState } from './theme.types';
 
 const initialState = {
   mode: 'dark',

@@ -7,7 +7,7 @@ import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import { Typography } from '@mui/material';
-import { ITimelinteNode } from '../types/SchoolLesson';
+import { ITimelinteNode } from '../features/schoolLesson/schoolLesson.types';
 
 interface IProps {
   nodes: ITimelinteNode[];

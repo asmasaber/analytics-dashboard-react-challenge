@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
-import schoolLesson from './schoolLesson/schoolLessonSlice';
-import theme from './theme/themeSlice';
+import schoolLesson from '../features/schoolLesson/schoolLesson.slice';
+import theme from '../features/theme/theme.slice';
 
 import storage from 'redux-persist/lib/storage';
 import {

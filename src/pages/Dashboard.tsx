@@ -2,9 +2,9 @@ import React from 'react';
 import Container from '@mui/material/Container';
 
 import Loading from '../components/Loading';
-import Filters from '../containers/Filters';
-import Analysis from '../containers/Analysis';
-import { useAppSelector } from '../store/hooks';
+import Filters from '../features/schoolLesson/components/Filters';
+import Analysis from '../features/schoolLesson/components/Analysis';
+import { useAppSelector } from '../app/hooks';
 
 const Dashboard = () => {
   const { loading, error, originalData } = useAppSelector((state) => state.schoolLesson);

@@ -6,12 +6,12 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import Box from '@mui/material/Box';
-import Headers from './containers/Headers';
+import Headers from './features/schoolLesson/components/Headers';
 import Loading from './components/Loading';
 
-import { useAppDispatch, useAppSelector } from './store/hooks';
-import { loadData } from './store/schoolLesson/schoolLessonSlice';
-import { toggleTheme } from './store/theme/themeSlice';
+import { useAppDispatch, useAppSelector } from './app/hooks';
+import { loadData } from './features/schoolLesson/schoolLesson.slice';
+import { toggleTheme } from './features/theme/theme.slice';
 import Fab from '@mui/material/Fab';
 
 const Dashboard = React.lazy(() => import('./pages/Dashboard'));

@@ -3,11 +3,11 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import { useNavigate } from 'react-router-dom';
 
-import { monthLabelForChart } from '../utils';
-import Chart from '../components/LineChart';
-import { useAppSelector } from '../store/hooks';
+import { monthLabelForChart } from '../../../app/utils';
+import Chart from '../../../components/LineChart';
+import { useAppSelector } from '../../../app/hooks';
 import SchoolLessonsList from './SchoolLessonsList';
-import { ChartData } from '../types/SchoolLesson';
+import { ChartData } from '../schoolLesson.types';
 
 const Analysis = () => {
   const navigate = useNavigate();
